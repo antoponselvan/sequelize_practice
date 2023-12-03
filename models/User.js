@@ -9,7 +9,7 @@ User.init({
     primaryKey: true,
     autoIncrement: true
   },
-  firsName: {
+  firstName: {
     type: DataTypes.STRING
   },
   lastName: {
@@ -21,7 +21,10 @@ User.init({
   password: {
     type: DataTypes.STRING
   }},{
-    timestamps: true
+    sequelize,
+    timestamps: true,
+    underscored: true,
+    modelName: 'user'
   }
 )
 

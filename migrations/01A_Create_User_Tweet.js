@@ -8,10 +8,10 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      firsName: {
+      first_name: {
         type: DataTypes.STRING,
       },
-      lastName: {
+      last_name: {
         type: DataTypes.STRING,
       },
       email: {
@@ -32,6 +32,7 @@ module.exports = {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true
       },
       title: {
         type: DataTypes.STRING,
@@ -52,7 +53,7 @@ module.exports = {
     });
   },
   down: async({context: queryInterface}) => {
+    await queryInterface.dropTable("tweets");
     await queryInterface.dropTable('users')
-    await queryInterface.dropTable('tweets')
   }
 }
